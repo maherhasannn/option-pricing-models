@@ -13,13 +13,13 @@ class OPTION_PRICING_MODEL(Enum):
     MONTE_CARLO = 'Monte Carlo Simulation'
     BINOMIAL = 'Binomial Model'
 
-@st.cache
+@st.cache_data
 def get_historical_data(ticker):
     """Getting historical data for speified ticker and caching it with streamlit app."""
     return Ticker.get_historical_data(ticker)
 
 # Ignore the Streamlit warning for using st.pyplot()
-st.set_option('deprecation.showPyplotGlobalUse', False)
+#st.set_option('deprecation.showPyplotGlobalUse', False)
 
 # Main title
 st.title('Option pricing')
